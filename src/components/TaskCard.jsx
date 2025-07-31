@@ -8,7 +8,7 @@
 //     const { deleteTask } = useTaskContext();
 //      const handleDelete=async(taskId)=>{
 //         try {
-//           const response = await axios.delete(`${import.meta.env.BASE_URL}/api/tasks/delete/${taskId}`, {
+//           const response = await axios.delete(`http://localhost:3000/api/tasks/delete/${taskId}`, {
 //             withCredentials: true,
 //           });
 //           deleteTask(taskId);
@@ -59,7 +59,7 @@ const TaskCard = ({ task: { _id, title, description, date, status }, onHandleEdi
 
   const handleDelete = async (taskId) => {
     try {
-      const response = await axios.delete(`${import.meta.env.BASE_URL}/api/tasks/delete/${taskId}`, {
+      const response = await axios.delete(`http://localhost:3000/api/tasks/delete/${taskId}`, {
         withCredentials: true,
       });
       deleteTask(taskId);
@@ -87,7 +87,7 @@ const TaskCard = ({ task: { _id, title, description, date, status }, onHandleEdi
         </div>
         <div className="flex justify-between gap-4">
           <button
-            className="text-gray-400 hover:text-yellow-400 text-xl"
+            className="text-gray-400 hover:text-yellow-400 text-xl cursor-pointer"
             onClick={(e) => {
               e.stopPropagation();
               onHandleEdit({ _id, title, description, date, status });
@@ -96,7 +96,7 @@ const TaskCard = ({ task: { _id, title, description, date, status }, onHandleEdi
             ✎
           </button>
           <button
-            className="text-red-800 hover:text-red-500 text-[25px]"
+            className="text-red-800 hover:text-red-500 text-[25px] cursor-pointer"
             onClick={(e) => {
               e.stopPropagation();
               handleDelete(_id);

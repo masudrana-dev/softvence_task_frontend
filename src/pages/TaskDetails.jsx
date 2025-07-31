@@ -17,7 +17,7 @@ useEffect(()=>{
   const fetchTaskDetails = async () => {
    
     try {
-      const response = await axios.get(`${import.meta.env.BASE_URL}/api/todos/fetch/${id}`,{
+      const response = await axios.get(`http://localhost:3000/api/todos/fetch/${id}`,{
         withCredentials: true,
       });
       setTask(response.data.todo);

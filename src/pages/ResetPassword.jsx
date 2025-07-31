@@ -24,7 +24,7 @@ const ResetPassword = () => {
                 return;
               }
 
-              const response = await axios.post("${import.meta.env.BASE_URL}/api/users/resetPassword", {
+              const response = await axios.post("http://localhost:3000/api/users/resetPassword", {
                 email,
                 newPassword,
               }, {

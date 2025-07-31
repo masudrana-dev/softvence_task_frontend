@@ -24,7 +24,7 @@ export default function DashboardPage() {
       useEffect(() => {
         const fetchTasks = async () => {
           try {
-            const response = await axios.get("${import.meta.env.BASE_URL}/api/tasks/fetch", {
+            const response = await axios.get("http://localhost:3000/api/tasks/fetch", {
               withCredentials: true,
             });
              setTasks(response.data.tasks);
@@ -59,18 +59,18 @@ export default function DashboardPage() {
       
       </div>
 
-      <div className="bg-white mt-[-60px] p-4 rounded-xl shadow  h-screen">
+      <div className="bg-white mt-[60px] p-4 rounded-xl shadow  h-screen">
 
-    <div className="bg-white mt-6 p-4  flex flex-col md:flex-row justify-between items-center gap-4">
-        <h2 className="text-lg font-semibold">All Task List</h2>
+    <div className="bg-white mt-6 p-4  flex flex-col md:flex-row justify-between items-center gap-4 cursor-pointer">
+        <h2 className="text-lg font-semibold cursor-pointer">All Task List</h2>
         <div className="flex flex-wrap gap-4">
-          <select className="border rounded-lg p-2 text-sm">
+          <select className="border rounded-lg p-2 text-sm cursor-pointer">
             <option>Select Task Category</option>
           </select>
           <select className="border rounded-lg p-2 text-sm">
             <option>All Task</option>
           </select>
-          <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold" onClick={() => setIsModalOpen(true)}>
+          <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm cursor-pointer font-semibold" onClick={() => setIsModalOpen(true)}>
             ➕ Add New Task
           </button>
         </div>

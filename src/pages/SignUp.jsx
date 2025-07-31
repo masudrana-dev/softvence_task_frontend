@@ -25,7 +25,7 @@
 //         return;
 //       }
 
-//       const response = await axios.post("${import.meta.env.BASE_URL}/api/users/signup", {
+//       const response = await axios.post("http://localhost:3000/api/users/signup", {
 //         name,
 //         email,
 //         password,
@@ -184,7 +184,7 @@ const Signup = () => {
     }
     try {
       const response = await axios.post(
-        "${import.meta.env.BASE_URL}/api/users/signup",
+        "http://localhost:3000/api/users/signup",
         { name, email, password },
         { withCredentials: true }
       );

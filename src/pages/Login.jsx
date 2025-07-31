@@ -14,7 +14,7 @@
 //     e.preventDefault();
 
 //     try {
-//       const response = await axios.post("${import.meta.env.BASE_URL}/api/users/login", {
+//       const response = await axios.post("http://localhost:3000/api/users/login", {
 //         email,
 //         password,
 //       }, {
@@ -133,7 +133,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "${import.meta.env.BASE_URL}/api/users/login",
+        "http://localhost:3000/api/users/login",
         { email, password },
         { withCredentials: true }
       );

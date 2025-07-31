@@ -30,7 +30,7 @@ setMode
     try {
       if (mode === 'edit') {
         const response = await axios.put(
-          `${import.meta.env.BASE_URL}/api/tasks/update/${selectedTask._id}`,
+          `http://localhost:3000/api/tasks/update/${selectedTask._id}`,
           { title, description, status },
           { withCredentials: true }
         );        
@@ -44,7 +44,7 @@ setMode
         toast.success(response.data.message || 'Task updated successfully!');
       } else {
         const response = await axios.post(
-          '${import.meta.env.BASE_URL}/api/tasks/create',
+          'http://localhost:3000/api/tasks/create',
           { title, description, status },
           { withCredentials: true }
         );
