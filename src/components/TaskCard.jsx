@@ -8,7 +8,7 @@
 //     const { deleteTask } = useTaskContext();
 //      const handleDelete=async(taskId)=>{
 //         try {
-//           const response = await axios.delete(`http://localhost:3000/api/tasks/delete/${taskId}`, {
+//           const response = await axios.delete(`${import.meta.env.BASE_URL}/api/tasks/delete/${taskId}`, {
 //             withCredentials: true,
 //           });
 //           deleteTask(taskId);
@@ -59,7 +59,7 @@ const TaskCard = ({ task: { _id, title, description, date, status }, onHandleEdi
 
   const handleDelete = async (taskId) => {
     try {
-      const response = await axios.delete(`http://localhost:3000/api/tasks/delete/${taskId}`, {
+      const response = await axios.delete(`${import.meta.env.BASE_URL}/api/tasks/delete/${taskId}`, {
         withCredentials: true,
       });
       deleteTask(taskId);

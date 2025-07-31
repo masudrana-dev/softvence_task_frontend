@@ -24,7 +24,7 @@ export default function DashboardPage() {
       useEffect(() => {
         const fetchTasks = async () => {
           try {
-            const response = await axios.get("http://localhost:3000/api/tasks/fetch", {
+            const response = await axios.get("${import.meta.env.BASE_URL}/api/tasks/fetch", {
               withCredentials: true,
             });
              setTasks(response.data.tasks);
